@@ -1,0 +1,8 @@
+{
+  "name": "Nexus Hub: The All-in-One Super App",
+  "description": "A comprehensive super app combining a versatile gaming hub with gamified productivity, a full suite of smart utilities, and a dedicated zone for meditation and mindfulness. Experience entertainment, productivity, and wellness in a single, beautifully designed application.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Hub Super App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      /* CYBER-OCCULT THEME */
+      :root {
+        --base-gunmetal: #1a1a1a;
+        --bg-charcoal: #222222;
+        --accent-violet: #a259fe;
+        --accent-crimson: #d7263d;
+        --accent-gold: #ffd700;
+        --contrast-white: #f0f0f0;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: var(--contrast-white);
+        background: 
+          /* Vignette overlay for readability */
+          radial-gradient(ellipse at center, rgba(13, 5, 28, 0.5) 0%, rgba(13, 5, 28, 0.95) 100%),
+          /* The vampire queen background image */
+          url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAQABAADASIAAhEBAxEB/8QAGwAAAgMBAQEAAAAAAAAAAAAAAgMAAQQFBgf/xABGEAABAwICBwUFBgQEBQUAAAABAAIDBBEFEgYhMUETIlFhcZEHFIGRoRQjMkKxwdFSYnLh8PEkgpKyM0NzNWOiF0RUZP/EABoBAAMBAQEBAAAAAAAAAAAAAAECAwAEBQb/xAAyEQACAgECAwYGAwEBAQEAAAABAgARAxIhMQRBEyJRYXGhFIGRscHR8DPBBiNCUuHx/9oADAMBAAIRAxEAPwDsoCgKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCgFAKAUAoBQCg-format-center-cover no-repeat;
+        min-height: 100vh;
+        overflow: hidden; /* Prevent scrollbars from the overlays */
+        position: relative;
+      }
+      
+      body::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: black;
+        z-index: -1; /* Place it behind the main background */
+      }
+      
+      .font-cinzel {
+          font-family: 'Cinzel', serif;
+      }
+
+      /* CUSTOM SCROLLBAR */
+      ::-webkit-scrollbar {
+          width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+          background: #2d3748;
+      }
+      ::-webkit-scrollbar-thumb {
+          background: #ef4444;
+          border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+          background: #dc2626;
+      }
+
+      /* FLOATING TEXT ANIMATION */
+      .floating-text {
+        position: absolute;
+        animation: float-up 2s ease-out forwards;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(0,0,0,0.7);
+        pointer-events: none;
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+      }
+
+      /* POP-IN ANIMATION */
+      @keyframes pop-in {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+      .animate-pop-in {
+        animation: pop-in 0.3s ease-out forwards;
+      }
+
+      /* XP BAR SHINE ANIMATION */
+      .xp-bar-animate::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+          transform: skewX(-25deg);
+          animation: shine 2.5s infinite linear;
+      }
+
+      @keyframes shine {
+          0% { left: -75%; }
+          100% { left: 125%; }
+      }
+      
+      /* OMEGA ORACLE TERMINAL EFFECT */
+      .terminal-screen {
+        text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+      }
+      .blinking-cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+      .scanline-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(18,18,18,0) 50%, rgba(0,0,0,0.25) 50%);
+        background-size: 100% 4px;
+        animation: scan 10s linear infinite;
+        pointer-events: none;
+      }
+      @keyframes scan {
+        from { background-position: 0 0; }
+        to { background-position: 0 200px; }
+      }
+      
+      /* GLYPH SCANNER EFFECT */
+      .glyph-scanner-view::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 3px;
+          background: #ef4444;
+          box-shadow: 0 0 10px #ef4444;
+          animation: scan-line 2s infinite ease-in-out;
+      }
+
+      @keyframes scan-line {
+          0% { top: 0; }
+          50% { top: calc(100% - 3px); }
+          100% { top: 0; }
+      }
+      
+      /* DOMINANCE AURA EFFECT */
+      body[data-dominance-level="high"] header {
+        box-shadow: 0 4px 30px rgba(215, 38, 61, 0.4);
+        border-color: rgba(215, 38, 61, 0.7);
+      }
+      
+      body[data-dominance-level="low"] header {
+        filter: saturate(0.7);
+      }
+      
+      /* ECHO WHISPER */
+      .echo-whisper {
+        position: fixed;
+        background-color: rgba(10, 5, 20, 0.85);
+        backdrop-filter: blur(4px);
+        color: #a78bfa; /* A muted violet */
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(167, 139, 250, 0.3);
+        font-family: 'Cinzel', serif;
+        font-size: 0.9rem;
+        max-width: 200px;
+        z-index: 9999;
+        animation: whisper-fade 6s forwards ease-in-out;
+        box-shadow: 0 0 15px rgba(167, 139, 250, 0.2);
+        pointer-events: none;
+      }
+      
+      .echo-whisper::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 20px;
+        border-width: 6px 6px 0 6px;
+        border-style: solid;
+        border-color: rgba(10, 5, 20, 0.85) transparent transparent transparent;
+      }
+      
+      @keyframes whisper-fade {
+        0% { opacity: 0; transform: translateY(10px); }
+        15% { opacity: 1; transform: translateY(0); }
+        85% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-10px); }
+      }
+
+      /* ATMOSPHERIC OVERLAYS */
+      @keyframes rain-fall-fast {
+        from { background-position: 0 0; }
+        to { background-position: 0 1600px; }
+      }
+      @keyframes rain-fall {
+        from { background-position: 0 0; }
+        to { background-position: 0 1100px; }
+      }
+      @keyframes lightning-flash {
+        0%, 94% { opacity: 0; }
+        95% { opacity: 1; }
+        95.5% { opacity: 0; }
+        96% { opacity: 0.6; }
+        96.5% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+      
+      /* Common rain layer styles */
+      #rain-overlay,
+      #rain-overlay-2,
+      #rain-overlay-3,
+      #rain-overlay-4,
+      #rain-overlay-5 {
+        position: fixed;
+        inset: 0;
+        z-index: 9990;
+        pointer-events: none;
+      }
+
+      /* Layer 1: Main Rain */
+      #rain-overlay {
+        /* Enhanced Mosaic rain effect */
+        background-image: 
+          /* Faster, thicker streaks */
+          linear-gradient(180deg, rgba(162, 89, 254, 0.3) 0%, transparent 60%),
+          /* Glitchy specks */
+          radial-gradient(ellipse at center, rgba(215, 38, 61, 0.2) 0%, transparent 40%),
+          /* Finer, angled rain */
+          linear-gradient(180deg, rgba(162, 89, 254, 0.15) 0%, transparent 70%);
+        background-size: 3px 500px, 4px 4px, 1px 400px;
+        background-position: 10vw 0, 50vw 0, 80vw 0;
+        animation: rain-fall-fast 0.4s linear infinite;
+        opacity: 1.0;
+        background-blend-mode: multiply;
+      }
+      
+      /* Layer 1b: Slower Rain (via pseudo-element) */
+      #rain-overlay::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+          /* Slower, wider streaks */
+          linear-gradient(180deg, rgba(162, 89, 254, 0.1) 0%, transparent 50%),
+          /* More glitchy specks */
+          radial-gradient(circle at top left, rgba(255, 215, 0, 0.05) 0%, transparent 60%),
+          /* Very fine, slow rain */
+          linear-gradient(180deg, rgba(162, 89, 254, 0.05) 0%, transparent 80%);
+        background-size: 2px 350px, 150px 150px, 1px 550px;
+        background-position: 30vw 0, 0vw 0, 60vw 0;
+        animation: rain-fall 1.1s linear infinite;
+        background-blend-mode: multiply;
+      }
+      
+      /* Layer 1c: Lightning Flash (via pseudo-element) */
+      #rain-overlay::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at center, rgba(200, 200, 255, 0.5) 0%, transparent 70%);
+        opacity: 0;
+        animation: lightning-flash 7s linear infinite;
+      }
+      
+      /* Layer 2: Cross-hatch/Flipped Rain */
+      #rain-overlay-2 {
+        background-image: linear-gradient(175deg, rgba(162, 89, 254, 0.1) 0%, transparent 50%);
+        background-size: 2px 400px;
+        background-position: 40vw 0;
+        animation: rain-fall-fast 0.5s linear infinite;
+        background-blend-mode: screen;
+        opacity: 0.625;
+        transform: scaleX(-1);
+      }
+      
+      /* Layer 3: Misty Speckles */
+      #rain-overlay-3 {
+        background-image: 
+          radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
+          radial-gradient(circle at bottom right, rgba(215, 38, 61, 0.15) 0%, transparent 50%);
+        background-size: 5px 5px, 3px 3px;
+        background-position: 25vw 0, 75vw 0;
+        animation: rain-fall 1.5s linear infinite;
+        background-blend-mode: color-dodge;
+        opacity: 0.475;
+      }
+
+      /* Layer 4: Heavy Glitch Downpour */
+      #rain-overlay-4 {
+        background-image: 
+          linear-gradient(180deg, rgba(240, 240, 240, 0.3) 0%, transparent 30%),
+          linear-gradient(180deg, rgba(240, 240, 240, 0.2) 0%, transparent 40%);
+        background-size: 4px 250px, 2px 350px;
+        background-position: 5vw 0, 95vw 0;
+        animation: rain-fall-fast 0.3s linear infinite;
+        background-blend-mode: difference;
+        opacity: 0.325;
+      }
+
+      /* Layer 5: Ambient Drizzle */
+      #rain-overlay-5 {
+        background-image: 
+          linear-gradient(180deg, rgba(162, 89, 254, 0.04) 0%, transparent 90%),
+          linear-gradient(180deg, rgba(162, 89, 254, 0.06) 0%, transparent 70%);
+        background-size: 1px 600px, 1px 450px;
+        background-position: 15vw 0, 85vw 0;
+        animation: rain-fall 2.2s linear infinite;
+        background-blend-mode: soft-light;
+        opacity: 0.775;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.552.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.3.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="rain-overlay"></div>
+    <div id="rain-overlay-2"></div>
+    <div id="rain-overlay-3"></div>
+    <div id="rain-overlay-4"></div>
+    <div id="rain-overlay-5"></div>
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
